@@ -2,7 +2,7 @@ resource "aws_instance" "ec2" {
   ami             = var.ami
   instance_type   = var.instance_type
  security_groups = [aws_security_group.SG.name]
- vpc_ids= "vpc-0db6c555566d65de5"    
+    
 
 
   count = 1
@@ -15,7 +15,7 @@ resource "aws_instance" "ec2" {
 resource "aws_security_group" "SG" {
   name        = "security group terraform"
   description = "security group using terraform"
-  vpc_id = "vpc-0db6c555566d65de5"
+  
 
   ingress {
     description      = "HTTPS"
